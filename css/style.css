@@ -101,3 +101,75 @@ caption {
   margin-top: 10px;
   color: var(--gris-texte);
 }
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: var(--espace);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+nav a:hover {
+  background-color: var(--couleur-principale, #8b4513);
+  color: #ffffff;
+}
+footer {
+  display: flex;
+  gap: calc(var(--espace) * 2);
+}
+
+footer > div {
+  flex: 1;
+}
+.grille-produits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+.carte {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  flex-direction: column;
+}
+.carte .prix {
+  margin-top: auto;
+  font-weight: bold;
+  color: var(--couleur-principale, #8b4513);
+}
+/* Gabarit général appliqué sur la balise body */
+body {
+  display: grid;
+  grid-template-areas:
+    "entete"
+    "navigation"
+    "contenu"
+    "pied";
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+header { grid-area: entete; }
+nav    { grid-area: navigation; }
+main   { grid-area: contenu; }
+footer { grid-area: pied; }
+.carte {
+  width: 400px;
+}
